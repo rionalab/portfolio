@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+}
+
+.container {
+    padding: 24px;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    background: #f4f4f4;
+    padding: 16px 24px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    a {
+        color: #333;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+    max-width: 600px;
+    margin:0 auto;
+    .product-item {
+        border:1px solid #ddd;
+        margin-bottom: 24px;
+        width: 100%;
+        .bottom {
+            padding: 24px;
+            button {
+                background: #000;
+                color: white;
+                border: 0;
+                padding:8px 24px;
+                font-weight: 600;
+                border-radius: 5px;
+                margin-top: 12px;
+            }
+            p {
+                margin-bottom: 8px;
+            }
+            .title {
+                font-weight: 600;
+            }
+            .desc {
+                color: #777;
+                font-size: 13px;
+            }
+            .price {
+                color: #6684f2;
+                font-weight: 600;
+            }
+        }
+        .img {
+            height: 200px;
+            display: grid;
+            place-items: center;
+            img {
+                width: 80%;
+                height: 80%;
+                -o-object-fit: contain;
+                   object-fit: contain;
+            }
+        }
+    }
+}
+
+.main-menu {
+    a {
+        display: inline-block
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.drawer {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 400px;
+    background: white;
+    box-shadow: 0 0 10px black;
+    height: 100vh;
+    box-sizing: border-box;
+    transition: all .6s;
+    padding: 32px;
+
+    &.show {
+        right: 0;
+        transition: all .3s;
+    }
+}
