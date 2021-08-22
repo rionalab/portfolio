@@ -1,23 +1,7 @@
-import React, {useEffect,useLayoutEffect,useState} from 'react'
-import Home from './Home';
-import {default as FakeStore } from 'apps/fake_store'
-import {default as PokemonSearch } from 'apps/pokemon_search'
-import {default as Others } from 'apps/others/index'
-
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, RouteComponentProps, Switch } from 'react-router-dom'
 import './app.scss'
 import Navbar from 'components/Navbar';
-
-type withChildren<T={}> = T & { children ?:React.ReactNode}
-
-type Props = {
-    counter?: string,
-    children: React.ReactNode
-} & withChildren;
-
-const Something = ({ children }:Props) => {
-    return <div>{children}</div>
-}
+import routes from 'configs/routes';
 
 function App() {
 
@@ -25,13 +9,22 @@ function App() {
         <div className="App">
 
             <BrowserRouter>
-                <Navbar />
+                {/* <Navbar /> */}
                 <div className="container">
                     <Switch>
-                        <Route path="/fake-store" component={FakeStore} />
-                        <Route path="/pokemon-search" component={PokemonSearch} />
-                        <Route path="/others" component={Others} />
-                        <Route path="/" component={Home} />
+                        {
+                            routes.map( (route, routeIndex) => (
+                                <Route
+                                    key={routeIndex}
+                                    path={route.path}
+                                    exact={route.exact}
+                                    render={(props:RouteComponentProps<any>)=>
+                                        <route.component {...props} />
+                                    }
+                                />
+                            ))
+                        }
+                        <Route render={()=> <h1>404</h1>} />
                     </Switch>
                 </div>
             </BrowserRouter>
