@@ -33,12 +33,12 @@ function App() {
                                 />
                             ))
                         } */}
+                        <Route path="/" exact={true} component={Home} />
                         <Route path="/fake-store" component={FakeStore} />
                         <Route path="/pokemon-search" component={PokemonSearch} />
                         <Route path="/todo-context-reducer-typescript" component={TodoContextReducerTS} />
                         <Route path="/tirtagracia" component={Tirtagracia} />
                         <Route path="/others" component={Others} />
-                        <Route path="/" exact={true} component={Home} />
                         <Route render={()=> <h1>404</h1>} />
                     </Switch>
                 </div>
