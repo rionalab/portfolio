@@ -39,7 +39,7 @@ function App() {
                         <Route path="/todo-context-reducer-typescript" component={TodoContextReducerTS} />
                         <Route path="/tirtagracia" component={Tirtagracia} />
                         <Route path="/others" component={Others} />
-                        <Route render={()=> <h1>404</h1>} />
+                        {/* <Route render={()=> <h1>404</h1>} /> */}
                     </Switch>
                 </div>
             </BrowserRouter>
