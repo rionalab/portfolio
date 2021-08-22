@@ -3,7 +3,7 @@ import './app.scss'
 import Navbar from 'components/Navbar';
 import routes from 'configs/routes';
 
-import Home from '.././Home';
+import Home from './Home';
 import Tirtagracia from 'apps/tirtagracia/Tirtagracia'
 
 import {default as FakeStore } from 'apps/fake_store'
@@ -36,6 +36,7 @@ function App() {
                         <Route path="/fake-store" component={FakeStore} />
                         <Route path="/pokemon-search" component={PokemonSearch} />
                         <Route path="/todo-context-reducer-typescript" component={TodoContextReducerTS} />
+                        <Route path="/tirtagracia" component={Tirtagracia} />
                         <Route path="/others" component={Others} />
                         <Route path="/" exact={true} component={Home} />
                         <Route render={()=> <h1>404</h1>} />
