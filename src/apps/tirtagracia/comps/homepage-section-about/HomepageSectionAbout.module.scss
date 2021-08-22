@@ -1,0 +1,52 @@
+@import '../../assets/css/var';
+
+.sectionAbout {
+    background: white;
+    padding: 140px 40px;
+    min-height: 100vh;
+}
+
+.sectionTitle {
+    margin: 0px 0px 50px;
+    font-size: 70px;
+    font-weight: 200;
+    color: #8f8f8f;
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5vw;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    width: 75%;
+    .kiri {
+        padding-right: 80px;
+    }
+    .kanan {
+        div {
+            padding-bottom: 30px;
+            padding-left: 80px;
+            border-left: 1px solid $orange;
+        }
+    }
+    p {
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 30px;
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 40px;
+        b {
+            display: block;
+            color: #aaa;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+    }
+}
